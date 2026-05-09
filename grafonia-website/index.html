@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Grafonia — Design & Print in Perfect Harmony</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Barlow+Condensed:wght@700;900&family=Noto+Sans+Bengali:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --teal: #1A7A8A;
+  --teal-dark: #0F5A68;
+  --teal-light: #E8F4F6;
+  --teal-mid: #2899AB;
+  --black: #111111;
+  --white: #ffffff;
+  --gray: #f5f6f7;
+  --gray-mid: #e2e6e8;
+  --text-muted: #6b7c84;
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Barlow',sans-serif;color:var(--black);background:var(--white);overflow-x:hidden;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--gray-mid);display:flex;justify-content:space-between;align-items:center;padding:0 5%;}
+.nav-logo{display:flex;align-items:center;gap:10px;padding:14px 0;text-decoration:none;}
+.nav-logo-icon{width:36px;height:36px;}
+.nav-logo-text{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;letter-spacing:0.05em;color:var(--black);}
+.nav-logo-text span{color:var(--teal);}
+.nav-tagline{font-size:11px;color:var(--text-muted);display:block;letter-spacing:0.03em;font-weight:400;}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{text-decoration:none;font-size:14px;color:var(--text-muted);font-weight:600;transition:color .2s;}
+.nav-links a:hover{color:var(--teal);}
+.nav-cta{background:var(--teal);color:var(--white);padding:10px 22px;border-radius:var(--radius-sm);font-size:14px;font-weight:700;text-decoration:none;transition:background .2s;}
+.nav-cta:hover{background:var(--teal-dark);}
+.nav-phone{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--teal);text-decoration:none;}
+
+/* HERO */
+.hero{background:var(--white);padding:80px 5% 60px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;border-bottom:1px solid var(--gray-mid);}
+.hero-sub{font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:16px;}
+.hero h1{font-family:'Barlow Condensed',sans-serif;font-size:64px;font-weight:900;line-height:1.0;color:var(--black);margin-bottom:8px;text-transform:uppercase;}
+.hero h1 span{color:var(--teal);}
+.hero-slogan{font-size:18px;color:var(--text-muted);margin-bottom:28px;font-style:italic;}
+.hero-desc{font-size:15px;color:var(--text-muted);line-height:1.7;margin-bottom:32px;max-width:440px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-main{background:var(--teal);color:var(--white);padding:14px 28px;border-radius:var(--radius-sm);font-size:15px;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:background .2s;}
+.btn-main:hover{background:var(--teal-dark);}
+.btn-ghost{background:transparent;color:var(--teal);padding:14px 28px;border-radius:var(--radius-sm);font-size:15px;font-weight:700;text-decoration:none;border:2px solid var(--teal);cursor:pointer;transition:all .2s;}
+.btn-ghost:hover{background:var(--teal);color:var(--white);}
+.hero-trust{display:flex;gap:28px;margin-top:36px;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-muted);font-weight:600;}
+.trust-dot{width:8px;height:8px;border-radius:50%;background:var(--teal);}
+.hero-visual{background:var(--gray);border-radius:16px;padding:32px;border:1px solid var(--gray-mid);position:relative;overflow:hidden;}
+.hero-visual-inner{background:var(--white);border-radius:var(--radius);padding:24px;border:1px solid var(--gray-mid);}
+.mockup-badge{display:inline-block;background:var(--teal);color:var(--white);font-size:11px;font-weight:700;padding:4px 10px;border-radius:4px;letter-spacing:0.08em;margin-bottom:16px;}
+.mockup-card{background:var(--white);border:1px solid var(--gray-mid);border-radius:8px;padding:16px;margin-bottom:10px;display:flex;align-items:center;gap:12px;}
+.mockup-card-icon{width:40px;height:40px;border-radius:8px;background:var(--teal-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.mockup-card-icon svg{width:20px;height:20px;stroke:var(--teal);fill:none;stroke-width:2;}
+.mockup-card h4{font-size:14px;font-weight:700;margin-bottom:2px;}
+.mockup-card p{font-size:12px;color:var(--text-muted);}
+.mockup-price{font-size:13px;font-weight:700;color:var(--teal);margin-left:auto;white-space:nowrap;}
+
+/* SERVICES */
+.services{padding:70px 5%;background:var(--gray);border-bottom:1px solid var(--gray-mid);}
+.section-header{text-align:center;margin-bottom:48px;}
+.section-tag{font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;}
+.section-header h2{font-family:'Barlow Condensed',sans-serif;font-size:42px;font-weight:900;text-transform:uppercase;color:var(--black);}
+.section-header h2 span{color:var(--teal);}
+.section-header p{font-size:15px;color:var(--text-muted);max-width:480px;margin:12px auto 0;line-height:1.7;}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;}
+.service-card{background:var(--white);border:1px solid var(--gray-mid);border-radius:var(--radius);padding:24px;transition:border-color .2s,transform .2s;}
+.service-card:hover{border-color:var(--teal);transform:translateY(-3px);}
+.service-icon{width:48px;height:48px;background:var(--teal-light);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.service-icon svg{width:24px;height:24px;stroke:var(--teal);fill:none;stroke-width:2;}
+.service-card h3{font-size:16px;font-weight:700;margin-bottom:6px;}
+.service-card p{font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:12px;}
+.service-from{font-size:13px;font-weight:700;color:var(--teal);}
+
+/* HOW IT WORKS */
+.how{padding:70px 5%;background:var(--white);border-bottom:1px solid var(--gray-mid);}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0;margin-top:48px;position:relative;}
+.steps::before{content:'';position:absolute;top:36px;left:10%;right:10%;height:2px;background:var(--gray-mid);z-index:0;}
+.step{text-align:center;padding:0 20px;position:relative;z-index:1;}
+.step-num{width:72px;height:72px;border-radius:50%;background:var(--teal);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;border:4px solid var(--white);box-shadow:0 0 0 2px var(--teal);}
+.step h3{font-size:16px;font-weight:700;margin-bottom:8px;}
+.step p{font-size:13px;color:var(--text-muted);line-height:1.6;}
+
+/* ORDER FORM */
+.order-section{padding:70px 5%;background:var(--gray);border-bottom:1px solid var(--gray-mid);}
+.order-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+.order-info h2{font-family:'Barlow Condensed',sans-serif;font-size:40px;font-weight:900;text-transform:uppercase;margin-bottom:16px;}
+.order-info h2 span{color:var(--teal);}
+.order-info p{font-size:15px;color:var(--text-muted);line-height:1.7;margin-bottom:24px;}
+.promise-list{list-style:none;}
+.promise-list li{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;padding:8px 0;border-bottom:1px solid var(--gray-mid);}
+.promise-list li svg{width:18px;height:18px;stroke:var(--teal);fill:none;stroke-width:2.5;flex-shrink:0;}
+.form-card{background:var(--white);border-radius:var(--radius);border:1px solid var(--gray-mid);padding:32px;}
+.form-title{font-size:18px;font-weight:700;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--gray-mid);}
+.form-group{margin-bottom:16px;}
+.form-group label{display:block;font-size:13px;font-weight:700;color:var(--black);margin-bottom:6px;}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:10px 14px;border:1px solid var(--gray-mid);border-radius:var(--radius-sm);font-size:14px;font-family:'Barlow',sans-serif;color:var(--black);background:var(--white);outline:none;transition:border-color .2s;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--teal);}
+.form-group textarea{height:90px;resize:vertical;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.upload-area{border:2px dashed var(--gray-mid);border-radius:var(--radius-sm);padding:24px;text-align:center;cursor:pointer;transition:border-color .2s;background:var(--gray);}
+.upload-area:hover{border-color:var(--teal);}
+.upload-area svg{width:32px;height:32px;stroke:var(--teal);fill:none;stroke-width:1.5;margin:0 auto 8px;display:block;}
+.upload-area p{font-size:13px;color:var(--text-muted);}
+.upload-area strong{color:var(--teal);cursor:pointer;}
+.summary-box{background:var(--gray);border-radius:var(--radius-sm);padding:16px;margin:16px 0;}
+.summary-row{display:flex;justify-content:space-between;font-size:13px;padding:5px 0;color:var(--text-muted);}
+.summary-row.total{font-size:15px;font-weight:700;color:var(--black);border-top:1px solid var(--gray-mid);margin-top:6px;padding-top:10px;}
+.submit-btn{width:100%;padding:14px;background:var(--teal);color:var(--white);border:none;border-radius:var(--radius-sm);font-size:16px;font-weight:700;cursor:pointer;font-family:'Barlow',sans-serif;transition:background .2s;}
+.submit-btn:hover{background:var(--teal-dark);}
+.whatsapp-btn{width:100%;padding:12px;background:#25D366;color:var(--white);border:none;border-radius:var(--radius-sm);font-size:14px;font-weight:700;cursor:pointer;font-family:'Barlow',sans-serif;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s;}
+.whatsapp-btn:hover{background:#1db954;}
+
+/* BEFORE/AFTER */
+.difference{padding:70px 5%;background:var(--white);border-bottom:1px solid var(--gray-mid);}
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px;}
+.ba-card{border-radius:var(--radius);padding:24px;border:1px solid var(--gray-mid);}
+.ba-label{display:inline-block;font-size:13px;font-weight:700;padding:6px 16px;border-radius:4px;margin-bottom:16px;letter-spacing:0.05em;}
+.ba-before .ba-label{background:#e74c3c;color:var(--white);}
+.ba-after .ba-label{background:var(--teal);color:var(--white);}
+.ba-card-inner{background:var(--white);border-radius:8px;padding:20px;border:1px solid var(--gray-mid);}
+.card-mockup{display:flex;gap:16px;align-items:center;}
+.card-front{width:120px;height:68px;border-radius:6px;border:1px solid var(--gray-mid);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--text-muted);font-weight:700;flex-shrink:0;}
+.card-front.styled{border-color:var(--teal);background:linear-gradient(135deg,#fff 60%,var(--teal-light) 100%);position:relative;overflow:hidden;}
+.card-front.styled::before{content:'';position:absolute;right:-20px;top:-20px;width:80px;height:80px;border-radius:50%;background:var(--teal-light);}
+.card-back{flex:1;font-size:10px;color:var(--text-muted);line-height:1.6;}
+.card-name{font-size:12px;font-weight:700;color:var(--black);margin-bottom:2px;}
+
+/* TRUST BAR */
+.trust-bar{background:var(--teal);padding:32px 5%;display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap;}
+.trust-badge{text-align:center;color:var(--white);}
+.trust-badge svg{width:28px;height:28px;stroke:rgba(255,255,255,0.8);fill:none;stroke-width:2;margin-bottom:8px;display:block;margin-left:auto;margin-right:auto;}
+.trust-badge h4{font-size:15px;font-weight:700;}
+.trust-badge p{font-size:12px;opacity:0.8;margin-top:2px;}
+
+/* FOOTER */
+footer{background:var(--black);color:rgba(255,255,255,0.8);padding:40px 5% 24px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:32px;}
+.footer-brand h3{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:900;color:var(--white);letter-spacing:0.05em;margin-bottom:8px;}
+.footer-brand h3 span{color:var(--teal-mid);}
+.footer-brand p{font-size:13px;line-height:1.7;color:rgba(255,255,255,0.6);margin-bottom:16px;}
+.footer-phone{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;color:var(--teal-mid);}
+.footer-col h4{font-size:13px;font-weight:700;color:var(--white);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px;}
+.footer-col ul{list-style:none;}
+.footer-col ul li{font-size:13px;color:rgba(255,255,255,0.6);padding:4px 0;cursor:pointer;transition:color .2s;}
+.footer-col ul li:hover{color:var(--teal-mid);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,0.4);}
+
+/* WHATSAPP FLOAT */
+.wa-float{position:fixed;bottom:24px;right:24px;background:#25D366;color:var(--white);width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:999;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,0.4);}
+.wa-float svg{width:28px;height:28px;fill:white;}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero{grid-template-columns:1fr;gap:32px;}
+  .hero h1{font-size:44px;}
+  .hero-visual{display:none;}
+  .order-grid{grid-template-columns:1fr;}
+  .ba-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+  .steps::before{display:none;}
+  .nav-links a{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="18" cy="18" r="18" fill="#E8F4F6"/>
+      <path d="M18 8 C12 8 8 12.5 8 18 C8 23.5 12 28 18 28 C22 28 24 26 24 26 L24 18 L18 18 L18 22 L20 22 L20 24 C20 24 19 24.5 18 24.5 C13.5 24.5 11.5 21.5 11.5 18 C11.5 14.5 13.5 11.5 18 11.5 C20.5 11.5 22.5 12.8 23.5 14.5 L27 12.5 C25 9.5 21.5 8 18 8Z" fill="#1A7A8A"/>
+    </svg>
+    <div>
+      <span class="nav-logo-text">GRAF<span>ONIA</span></span>
+      <span class="nav-tagline">Design & Print in Perfect Harmony</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#how">How it works</a>
+    <a href="#order">Order</a>
+    <a href="tel:+8801317893466" class="nav-phone">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      +880 1317-893466
+    </a>
+    <a class="nav-cta" href="#order">Place Order</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <p class="hero-sub">Design & Print in Perfect Harmony</p>
+    <h1>Your Vision.<br><span>Our</span> Passion.</h1>
+    <p class="hero-slogan">Where Creativity Meets Quality.</p>
+    <p class="hero-desc">Professional design and printing solutions for your brand — business cards, banners, brochures, stickers, and more. Fast delivery across Bangladesh.</p>
+    <div class="hero-btns">
+      <a class="btn-main" href="#order">Place an Order</a>
+      <a class="btn-ghost" href="#services">Our Services</a>
+    </div>
+    <div class="hero-trust">
+      <span class="trust-item"><span class="trust-dot"></span>Premium Quality</span>
+      <span class="trust-item"><span class="trust-dot"></span>On-Time Delivery</span>
+      <span class="trust-item"><span class="trust-dot"></span>Creative Design</span>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-visual-inner">
+      <span class="mockup-badge">OUR WORK</span>
+      <div class="mockup-card">
+        <div class="mockup-card-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+        </div>
+        <div>
+          <h4>Business Cards</h4>
+          <p>Premium finish, both sides</p>
+        </div>
+        <span class="mockup-price">From ৳350</span>
+      </div>
+      <div class="mockup-card">
+        <div class="mockup-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+        </div>
+        <div>
+          <h4>Banner Print</h4>
+          <p>Indoor & outdoor quality</p>
+        </div>
+        <span class="mockup-price">From ৳900</span>
+      </div>
+      <div class="mockup-card">
+        <div class="mockup-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <div>
+          <h4>Brochures & Flyers</h4>
+          <p>Full color, all sizes</p>
+        </div>
+        <span class="mockup-price">From ৳500</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-header">
+    <p class="section-tag">What we offer</p>
+    <h2>Our <span>Services</span></h2>
+    <p>From concept to print — we handle everything for your brand.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div>
+      <h3>Visiting Card</h3>
+      <p>Premium matte, gloss & spot UV finish. Both sides printing available.</p>
+      <span class="service-from">From ৳ 350</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H4z"/><path d="M2 20h20M8 16v4M16 16v4"/></svg></div>
+      <h3>Banner Print</h3>
+      <p>High-quality vinyl & flex banners for indoor and outdoor use.</p>
+      <span class="service-from">From ৳ 900</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 4v16M3 9h5M3 14h5"/></svg></div>
+      <h3>ID Card & Accessories</h3>
+      <p>PVC ID cards, lanyards, card holders — complete office solution.</p>
+      <span class="service-from">From ৳ 120</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+      <h3>Leaflet & Brochure</h3>
+      <p>Trifold, bifold and custom sizes in glossy or matte finish.</p>
+      <span class="service-from">From ৳ 500</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div>
+      <h3>Sticker & Label</h3>
+      <p>Custom shapes, die-cut stickers, product labels and roll stickers.</p>
+      <span class="service-from">From ৳ 250</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></div>
+      <h3>Large Format Print</h3>
+      <p>Posters, roll-ups, backdrops and signage in any size you need.</p>
+      <span class="service-from">From ৳ 1,200</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
+      <h3>PVC Card</h3>
+      <p>Durable plastic cards for membership, loyalty and access control.</p>
+      <span class="service-from">From ৳ 80</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg></div>
+      <h3>File & Envelope</h3>
+      <p>Branded presentation files, folders and custom printed envelopes.</p>
+      <span class="service-from">From ৳ 200</span>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="section-header">
+    <p class="section-tag">Simple process</p>
+    <h2>How It <span>Works</span></h2>
+    <p>From your idea to your hands — in 4 easy steps.</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Choose service</h3>
+      <p>Select what you need and configure size, quantity and finish.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Upload or request design</h3>
+      <p>Send your file or let our designers create something stunning.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>We print</h3>
+      <p>High-quality production verified by our quality control team.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h3>Fast delivery</h3>
+      <p>Delivered to your door anywhere in Bangladesh within 48 hours.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="difference" id="difference">
+  <div class="section-header">
+    <p class="section-tag">See the difference</p>
+    <h2>Before vs <span>After</span> Grafonia</h2>
+    <p>Our design elevates your brand. See what a professional touch can do.</p>
+  </div>
+  <div class="ba-grid">
+    <div class="ba-card ba-before">
+      <span class="ba-label">Before</span>
+      <div class="ba-card-inner">
+        <div class="card-mockup">
+          <div class="card-front">PLAIN CARD</div>
+          <div class="card-back">
+            <div class="card-name">YOUR NAME</div>
+            <div>Graphic Designer</div>
+            <div style="margin-top:6px;font-size:9px;color:#aaa;">123 Address, City<br/>+00 1234 5678<br/>email@example.com</div>
+          </div>
+        </div>
+        <p style="margin-top:14px;font-size:12px;color:#999;">Generic, forgettable. No visual identity or brand connection.</p>
+      </div>
+    </div>
+    <div class="ba-card ba-after">
+      <span class="ba-label">After — Grafonia Design</span>
+      <div class="ba-card-inner">
+        <div class="card-mockup">
+          <div class="card-front styled">
+            <svg width="28" height="28" viewBox="0 0 36 36" fill="none" style="position:relative;z-index:1;">
+              <path d="M18 8C12 8 8 12.5 8 18c0 5.5 4 10 10 10 4 0 6-2 6-2V18h-6v4h2v2s-1 .5-2 .5C13.5 24.5 11.5 21.5 11.5 18s2-6.5 6.5-6.5c2.5 0 4.5 1.3 5.5 3l3.5-2C25 9.5 21.5 8 18 8z" fill="#1A7A8A"/>
+            </svg>
+          </div>
+          <div class="card-back">
+            <div class="card-name" style="color:#1A7A8A;">YOUR NAME</div>
+            <div>Graphic Designer</div>
+            <div style="margin-top:6px;font-size:9px;color:#aaa;">123 Address, City<br/>+00 1234 5678<br/>email@example.com</div>
+          </div>
+        </div>
+        <p style="margin-top:14px;font-size:12px;color:#1A7A8A;font-weight:600;">Professional, memorable. Strong brand identity that impresses clients.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER FORM -->
+<section class="order-section" id="order">
+  <div class="order-grid">
+    <div class="order-info">
+      <p class="section-tag">Ready to print?</p>
+      <h2>Place Your <span>Order</span> Now</h2>
+      <p>Fill the form and our team will contact you within 1 hour to confirm your order. You can also reach us directly on WhatsApp.</p>
+      <ul class="promise-list">
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Free design consultation included</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Proof approval before printing</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> 48-hour turnaround on most orders</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Delivery anywhere in Bangladesh</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> 100% quality satisfaction guarantee</li>
+      </ul>
+      <div style="margin-top:28px;padding:20px;background:var(--teal-light);border-radius:var(--radius);border:1px solid var(--teal);">
+        <p style="font-size:13px;font-weight:700;color:var(--teal-dark);margin-bottom:4px;">Direct WhatsApp</p>
+        <a href="https://wa.me/8801317893466" style="font-size:20px;font-weight:700;color:var(--teal);text-decoration:none;">+880 1317-893466</a>
+        <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">We reply within minutes</p>
+      </div>
+    </div>
+    <div class="form-card">
+      <p class="form-title">Order Details</p>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your name</label>
+          <input type="text" placeholder="Full name"/>
+        </div>
+        <div class="form-group">
+          <label>Phone / WhatsApp</label>
+          <input type="text" placeholder="+880 ..."/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Service</label>
+        <select id="svc" onchange="calcTotal()">
+          <option value="350">Visiting Card — from ৳350</option>
+          <option value="900">Banner Print — from ৳900</option>
+          <option value="120">ID Card & Accessories — from ৳120</option>
+          <option value="500">Leaflet & Brochure — from ৳500</option>
+          <option value="250">Sticker & Label — from ৳250</option>
+          <option value="1200">Large Format Print — from ৳1,200</option>
+          <option value="80">PVC Card — from ৳80</option>
+          <option value="200">File & Envelope — from ৳200</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Quantity</label>
+          <select id="qty" onchange="calcTotal()">
+            <option value="1">100 pcs</option>
+            <option value="2">250 pcs</option>
+            <option value="4">500 pcs</option>
+            <option value="7">1000 pcs</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Size / format</label>
+          <select>
+            <option>Standard</option>
+            <option>A5</option>
+            <option>A4</option>
+            <option>A3</option>
+            <option>Custom size</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Special instructions</label>
+        <textarea placeholder="Colors, finish, any special notes..."></textarea>
+      </div>
+      <div class="form-group">
+        <label>Upload design file</label>
+        <div class="upload-area">
+          <svg viewBox="0 0 24 24"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0018 9h-1.26A8 8 0 103 16.3"/></svg>
+          <p>Drag & drop here or <strong>browse file</strong></p>
+          <p style="font-size:11px;margin-top:4px;">PDF, AI, PSD, PNG — max 50MB. Or we design for you.</p>
+        </div>
+      </div>
+      <div class="summary-box">
+        <div class="summary-row"><span>Service base price</span><span id="s-base">৳ 350</span></div>
+        <div class="summary-row"><span>Quantity multiplier</span><span id="s-qty">× 1</span></div>
+        <div class="summary-row"><span>Design fee</span><span>৳ 150</span></div>
+        <div class="summary-row total"><span>Estimated total</span><span id="s-total">৳ 500</span></div>
+      </div>
+      <button class="submit-btn" onclick="alert('Thank you! Our team will contact you shortly on WhatsApp.')">Submit Order</button>
+      <a href="https://wa.me/8801317893466" class="whatsapp-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Order via WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-badge">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+    <h4>Premium Quality</h4>
+    <p>Top-grade materials only</p>
+  </div>
+  <div class="trust-badge">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    <h4>On-Time Delivery</h4>
+    <p>48hr turnaround guaranteed</p>
+  </div>
+  <div class="trust-badge">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    <h4>Creative Design</h4>
+    <p>Expert designers on your side</p>
+  </div>
+  <div class="trust-badge">
+    <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+    <h4>Customer Satisfaction</h4>
+    <p>100% happiness guarantee</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>GRAF<span>ONIA</span></h3>
+      <p>Professional design and printing solutions for businesses and brands across Bangladesh. Design & Print in Perfect Harmony.</p>
+      <div class="footer-phone">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        +880 1317-893466
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li>Visiting Card</li>
+        <li>Banner Print</li>
+        <li>ID Card</li>
+        <li>Brochure & Leaflet</li>
+        <li>Sticker & Label</li>
+        <li>Large Format</li>
+        <li>PVC Card</li>
+        <li>File & Envelope</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li>About us</li>
+        <li>Our work</li>
+        <li>How it works</li>
+        <li>Place an order</li>
+        <li>Track order</li>
+        <li>Contact us</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Grafonia. All rights reserved. Dhaka, Bangladesh.</span>
+    <span>Design & Print in Perfect Harmony</span>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a class="wa-float" href="https://wa.me/8801317893466" title="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+function calcTotal() {
+  var base = parseInt(document.getElementById('svc').value);
+  var qty = parseInt(document.getElementById('qty').value);
+  var design = 150;
+  var total = base * qty + design;
+  document.getElementById('s-base').textContent = '৳ ' + base.toLocaleString();
+  document.getElementById('s-qty').textContent = '× ' + qty;
+  document.getElementById('s-total').textContent = '৳ ' + total.toLocaleString();
+}
+</script>
+</body>
+</html>
